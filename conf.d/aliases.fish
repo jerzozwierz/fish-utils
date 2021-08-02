@@ -4,3 +4,6 @@ alias json2yml='python -c \'import sys, yaml, json; yaml.safe_dump(json.load(sys
 git config --global alias.ch checkout
 git config --global alias.st status
 
+abbr -a gw ./gradlew
+abbr -a dps docker ps --all
+
