@@ -1,3 +1,5 @@
+alias gi="git ch -b"
+
 function gpc() {
 	C_BRANCH=$(git branch | grep \* | awk '{print $2}')
 	git push origin $C_BRANCH "${@:1}"
