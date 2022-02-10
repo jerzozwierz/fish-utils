@@ -1,3 +1,5 @@
+unalias gam
+alias gam="git commit -a --amend"
 alias gi="git ch -b"
 
 function gpc() {
