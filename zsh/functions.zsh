@@ -24,12 +24,16 @@ function gfo() {
 }
 
 function gff() {
+        M_BRANCH="master"
+        if [ -n $1 ]; then
+                M_BRANCH=$1
+        fi
 	C_BRANCH_TO_DEL=$(git branch | grep \* | awk '{print $2}')
-	if [ "$C_BRANCH_TO_DEL" = "master" ]; then
-		echo "ERROR: gff: Cannot finalize master"
+	if [ "$C_BRANCH_TO_DEL" = "$M_BRANCH" ]; then
+		echo "ERROR: gff: Cannot finalize $M_BRANCH"
 		return 1
 	fi
-	gfo master
+	gfo $M_BRANCH
 	git branch -D $C_BRANCH_TO_DEL
 }
 
