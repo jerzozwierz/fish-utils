@@ -16,7 +16,7 @@ unalias gfo
 
 function gfo() {
 	C_BRANCH=$(git branch | grep \* | awk '{print $2}')
-	if [ -n $1 ]; then
+	if [ -n "$1" ]; then
 		git fetch origin $1
 		git checkout $1
 		gpo
@@ -25,7 +25,7 @@ function gfo() {
 
 function gff() {
         M_BRANCH="master"
-        if [ -n $1 ]; then
+        if [ -n "$1" ]; then
                 M_BRANCH=$1
         fi
 	C_BRANCH_TO_DEL=$(git branch | grep \* | awk '{print $2}')
